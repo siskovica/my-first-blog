@@ -23,7 +23,11 @@ urlpatterns = [
         path('admin/', admin.site.urls),
 	path(
             'favicon.ico',
-            RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')),
+            RedirectView.as_view(url=staticfiles_storage.url('static/img/favicon.ico')),
+            ),
+        path(
+            'site.webmanifest',
+            RedirectView.as_view(url=staticfiles_storage.url('static/img/site.webmanifest')),
             ),
         path('', include('blog.urls')),
 ]
